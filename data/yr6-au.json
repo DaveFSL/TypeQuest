@@ -1,0 +1,86 @@
+{
+  "locale": "en-AU",
+  "yearGroup": 6,
+  "title": "Type Quest — Year 6",
+  "curriculumVersion": "9.0",
+  "curriculumSubject": "English",
+  "levels": [
+    {
+      "name": "Home Row",
+      "color": "LM",
+      "emoji": "🏠",
+      "sub": "Find the keys under your fingers",
+      "curriculum": {
+        "codes": ["AC9E6LY06"],
+        "focus": "Keyboard fluency to create written texts"
+      },
+      "items": ["f", "j", "d", "k", "a", "s", "l", "g", "h", "as", "add", "dad", "sad", "ask", "all", "lad", "fall", "glass", "flask", "salad", "flash"]
+    },
+    {
+      "name": "Grapheme–Phoneme",
+      "color": "LI",
+      "emoji": "🧩",
+      "sub": "Less common grapheme–phoneme relationships",
+      "curriculum": {
+        "codes": ["AC9E6LY08"],
+        "focus": "Use phonic knowledge of common and less common grapheme–phoneme relationships"
+      },
+      "items": ["placeholder", "words", "coming", "soon"]
+    },
+    {
+      "name": "Sentences",
+      "color": "RI",
+      "emoji": "✏️",
+      "sub": "Complex sentences for varied purposes",
+      "curriculum": {
+        "codes": ["AC9E6LA06", "AC9E6LY06"],
+        "focus": "Understand and write complex sentences for particular purposes and audiences"
+      },
+      "items": ["placeholder sentence one", "placeholder sentence two"]
+    },
+    {
+      "name": "Roots & Affixes",
+      "color": "RM",
+      "emoji": "🌱",
+      "sub": "Latin and Greek roots, prefixes and suffixes",
+      "curriculum": {
+        "codes": ["AC9E6LY09"],
+        "focus": "Use knowledge of word origins including Latin and Greek roots, prefixes and suffixes"
+      },
+      "items": ["biology", "transport", "preview"]
+    },
+    {
+      "name": "Tricky Words",
+      "color": "LR",
+      "emoji": "🎯",
+      "sub": "Complex and subject-specific vocabulary",
+      "curriculum": {
+        "codes": ["AC9E6LY08", "AC9E6LY09"],
+        "focus": "Spell using phonic, morphemic and grammatical knowledge"
+      },
+      "items": ["accommodate", "occurrence", "maintenance"]
+    },
+    {
+      "name": "Capitals",
+      "color": "RR",
+      "emoji": "🔠",
+      "sub": "Proper nouns, titles and sentence starts",
+      "curriculum": {
+        "codes": ["AC9E6LA08"],
+        "focus": "Understand how proper nouns and titles use capital letters"
+      },
+      "items": ["Adelaide", "Tasmania", "Australia", "Thursday"]
+    },
+    {
+      "name": "Punctuated Sentences",
+      "color": "RP",
+      "emoji": "🏆",
+      "sub": "Edit and publish with precise punctuation",
+      "curriculum": {
+        "codes": ["AC9E6LY06"],
+        "focus": "Plan, create, edit and publish written texts with precise punctuation"
+      },
+      "items": ["Placeholder sentence.", "Another placeholder sentence."]
+    }
+  ]
+}

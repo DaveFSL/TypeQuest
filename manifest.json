@@ -1,7 +1,7 @@
 {
-  "name": "Type Quest — Year 3",
+  "name": "Type Quest",
   "short_name": "Type Quest",
-  "description": "Typing practice for Year 3 students — laptops and iPads.",
+  "description": "Typing practice for Australian students — Years 3–6, aligned to Curriculum v9.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#eef3f8",

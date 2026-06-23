@@ -62,6 +62,14 @@
   .lead h2{font-family:'Fredoka',sans-serif; font-weight:600; font-size:clamp(26px,5vw,40px); margin:0 0 6px;}
   .lead p{margin:0; color:var(--ink-soft); font-size:17px; font-weight:600;}
   .saved-note{text-align:center; margin:0 0 8px; color:var(--ink-soft); font-size:13px; font-weight:600; opacity:.85;}
+  .year-tabs{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin:0 0 14px;}
+  .year-tab{font-family:'Fredoka',sans-serif; font-weight:600; font-size:15px; color:var(--ink-soft);
+    background:var(--panel); border:1.5px solid var(--line); border-radius:999px; padding:8px 18px; cursor:pointer;}
+  .year-tab:hover{color:var(--ink);}
+  .year-tab.on{color:#fff; background:var(--RM); border-color:var(--RM);}
+  .curriculum-tag{display:inline-block; margin-top:8px; font-family:'Nunito',sans-serif; font-size:11px; font-weight:700;
+    color:var(--RM); background:#eef5fc; border-radius:999px; padding:3px 9px; line-height:1.3;}
+  .curriculum-note{text-align:center; margin:-2px 0 10px; color:var(--ink-soft); font-size:12px; font-weight:600;}
   .levels{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:auto 0; padding:14px 0 28px;}
   .lvl-card{background:var(--panel); border:2px solid var(--line); border-radius:22px; padding:20px 16px 18px;
     text-align:center; cursor:pointer; transition:transform .12s ease, box-shadow .12s ease; position:relative;}
@@ -159,7 +167,9 @@
 
 <main>
   <section id="selectScreen">
-    <div class="lead"><h2>Pick a level</h2><p>Watch for the glowing key, then tap it or press it.</p></div>
+    <div class="lead"><h2 id="leadTitle">Pick a level</h2><p>Watch for the glowing key, then tap it or press it.</p></div>
+    <p class="curriculum-note">Aligned to Australian Curriculum v9.0 — English</p>
+    <div class="year-tabs" id="yearTabs" role="tablist" aria-label="Year group"></div>
     <p class="saved-note" id="savedNote" hidden>Progress is saved on this device.</p>
     <div class="teacher-panel" id="teacherPanel">
       <button type="button" class="teacher-toggle" id="teacherToggle">For teachers ▾</button>
@@ -206,9 +216,14 @@
 
 <script>
 /* ---------- config ---------- */
-const DATA_URL='data/yr3-au.json';
-const STORAGE_KEY='typequest-yr3-au-v1';
+const YEAR_GROUPS=[3,4,5,6];
+const YEAR_PREF_KEY='typequest-selected-year-v1';
+const dataUrlFor=y=>`data/yr${y}-au.json`;
+const storageKeyFor=y=>`typequest-yr${y}-au-v1`;
+let currentYear=3;
+let STORAGE_KEY=storageKeyFor(3);
 let appTitle='Type Quest — Year 3';
+let curriculumVersion='9.0';
 
 /* ---------- fingers ---------- */
 const FINGERS={
@@ -236,6 +251,12 @@ const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 const isLetterLower=c=>/^[a-z]$/.test(c);
 
+function resetPlayState(){
+  unlocked=0; lvl=0; item=0; pos=0; busy=false; shiftArmed=false;
+  hits=0; misses=0;
+  Object.keys(bestTimes).forEach(k=>delete bestTimes[k]);
+  Object.keys(levelStats).forEach(k=>delete levelStats[k]);
+}
 function loadProgress(){
   try{
     const raw=localStorage.getItem(STORAGE_KEY);
@@ -262,16 +283,51 @@ async function loadLevels(){
   const grid=document.getElementById('levelGrid');
   grid.innerHTML='<div class="load-msg">Loading levels…</div>';
   try{
-    const res=await fetch(DATA_URL);
+    const res=await fetch(dataUrlFor(currentYear));
     if(!res.ok) throw new Error('Could not load levels');
     const data=await res.json();
     LEVELS=data.levels||[];
-    appTitle=data.title||'Type Quest — Year 3';
-    document.getElementById('appTitle').textContent=appTitle.replace(/ — Year 3.*/,'');
+    appTitle=data.title||`Type Quest — Year ${currentYear}`;
+    curriculumVersion=data.curriculumVersion||'9.0';
+    document.getElementById('appTitle').textContent='Type Quest';
+    document.getElementById('leadTitle').textContent=`Pick a level — Year ${currentYear}`;
     renderLevels();
   }catch(e){
     grid.innerHTML='<div class="load-msg">Could not load levels. Check your connection and refresh.</div>';
   }
+}
+function renderYearTabs(){
+  const wrap=document.getElementById('yearTabs');
+  wrap.innerHTML='';
+  YEAR_GROUPS.forEach(y=>{
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='year-tab'+(y===currentYear?' on':'');
+    btn.textContent='Year '+y;
+    btn.setAttribute('role','tab');
+    btn.setAttribute('aria-selected',y===currentYear?'true':'false');
+    btn.onclick=()=>{ if(y!==currentYear) switchYear(y); };
+    wrap.appendChild(btn);
+  });
+}
+async function switchYear(y){
+  if(playScreen.classList.contains('on')){
+    overlay.classList.remove('on');
+    backToLevels();
+  }
+  saveProgress();
+  currentYear=y;
+  STORAGE_KEY=storageKeyFor(y);
+  try{ localStorage.setItem(YEAR_PREF_KEY,String(y)); }catch(e){}
+  resetPlayState();
+  loadProgress();
+  renderYearTabs();
+  await loadLevels();
+}
+function curriculumTag(L){
+  const codes=L.curriculum?.codes;
+  if(!codes?.length) return '';
+  return `<div class="curriculum-tag">${codes.join(' · ')}</div>`;
 }
 
 /* ---------- export (teachers) ---------- */
@@ -289,6 +345,7 @@ function buildProgressReport(){
   const name=document.getElementById('studentName').value.trim();
   const lines=[
     appTitle+' — Progress summary',
+    'Australian Curriculum v'+curriculumVersion+' — English',
     'Exported '+new Date().toLocaleString('en-AU'),
     name?'Student: '+name:'',
     '',
@@ -297,6 +354,7 @@ function buildProgressReport(){
   ];
   LEVELS.forEach((L,i)=>{
     let line=(i+1)+'. '+L.name+' — ';
+    if(L.curriculum?.codes?.length) line+='['+L.curriculum.codes.join(', ')+'] ';
     if(i>unlocked) line+='Locked';
     else if(bestTimes[i]!==undefined){
       line+='Best time: '+fmt(bestTimes[i]);
@@ -404,6 +462,7 @@ function renderLevels(){
     const card=document.createElement('div'); card.className='lvl-card'+(locked?' locked':'');
     card.style.setProperty('--c',levelColor(L));
     card.innerHTML=`<div class="num">${i+1}</div><h3>${L.name}</h3><p>${L.sub}</p>`+
+      curriculumTag(L)+
       (bestTimes[i]!==undefined?`<div class="best">⭐ Best ${fmt(bestTimes[i])}${levelStats[i]?.accuracy?' · 🎯 '+levelStats[i].accuracy:''}</div>`:'')+
       (locked?'<span class="lock">🔒</span>':'');
     if(!locked) card.addEventListener('click',()=>startLevel(i));
@@ -564,7 +623,12 @@ function runFx(type){
   raf=requestAnimationFrame(frame);
 }
 
+try{
+  const savedYear=+localStorage.getItem(YEAR_PREF_KEY);
+  if(YEAR_GROUPS.includes(savedYear)){ currentYear=savedYear; STORAGE_KEY=storageKeyFor(savedYear); }
+}catch(e){}
 loadProgress();
+renderYearTabs();
 loadLevels();
 
 if('serviceWorker' in navigator){

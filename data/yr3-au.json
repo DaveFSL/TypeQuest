@@ -2,54 +2,84 @@
   "locale": "en-AU",
   "yearGroup": 3,
   "title": "Type Quest — Year 3",
+  "curriculumVersion": "9.0",
+  "curriculumSubject": "English",
   "levels": [
     {
       "name": "Home Row",
       "color": "LM",
       "emoji": "🏠",
       "sub": "Find the keys under your fingers",
+      "curriculum": {
+        "codes": ["AC9E3LY06"],
+        "focus": "Keyboard fluency to create written texts"
+      },
       "items": ["f", "j", "d", "k", "a", "s", "l", "g", "h", "as", "add", "dad", "sad", "ask", "all", "lad", "fall", "glass", "flask", "salad", "flash"]
     },
     {
       "name": "Word Builder",
       "color": "LI",
       "emoji": "🧩",
-      "sub": "Type whole words",
+      "sub": "Phoneme–grapheme patterns in words",
+      "curriculum": {
+        "codes": ["AC9E3LY09"],
+        "focus": "Apply phoneme–grapheme relationships to read and write multisyllabic words"
+      },
       "items": ["cat", "dog", "sun", "run", "big", "red", "fun", "jump", "play", "fish", "tree", "book", "milk", "frog", "green", "happy", "water", "smile", "friend", "because"]
     },
     {
       "name": "Sentences",
       "color": "RI",
       "emoji": "✏️",
-      "sub": "Words and spaces together",
+      "sub": "Simple sentences with spaces",
+      "curriculum": {
+        "codes": ["AC9E3LA06", "AC9E3LY06"],
+        "focus": "Understand and write simple sentences"
+      },
       "items": ["the cat is red", "i can run fast", "we like to play", "my dog is big", "the sun is hot", "she has a book", "look at the frog", "we play in the park", "i can jump up high", "my friend is funny"]
     },
     {
       "name": "Big Words",
       "color": "RM",
       "emoji": "🚀",
-      "sub": "Longer, trickier words",
+      "sub": "Multisyllabic words with complex patterns",
+      "curriculum": {
+        "codes": ["AC9E3LY09", "AC9E3LY10"],
+        "focus": "Blend and segment multisyllabic words with more complex letter patterns"
+      },
       "items": ["rainbow", "dinosaur", "elephant", "computer", "birthday", "favourite", "adventure", "playground", "butterfly", "important", "beautiful", "everybody", "wonderful", "vegetable"]
     },
     {
       "name": "Tricky Words",
       "color": "LR",
       "emoji": "🎯",
-      "sub": "Words teachers say are hard in Year 3",
+      "sub": "High-frequency and irregular words",
+      "curriculum": {
+        "codes": ["AC9E3LY11", "AC9E3LY12"],
+        "focus": "Less common letter patterns and high-frequency words including homophones"
+      },
       "items": ["already", "they", "forgetting", "beginning", "February", "yesterday", "believe", "people", "favourite", "chocolate", "almost", "after", "surprise", "tomorrow", "different", "ever", "never", "every", "one", "only", "once"]
     },
     {
       "name": "Capitals",
       "color": "RR",
       "emoji": "🔠",
-      "sub": "Use Shift for capital letters",
+      "sub": "Proper nouns and sentence starts",
+      "curriculum": {
+        "codes": ["AC9E3LA08"],
+        "focus": "Understand how proper nouns use capital letters"
+      },
       "items": ["Sam", "Max", "Emma", "Ben", "Tom", "Lily", "Jack", "Anna", "Monday", "Friday", "March", "April", "Brisbane", "Australia"]
     },
     {
       "name": "Real Sentences",
       "color": "RP",
       "emoji": "🏆",
-      "sub": "Capitals and full stops",
+      "sub": "Capitals, full stops and editing",
+      "curriculum": {
+        "codes": ["AC9E3LY06"],
+        "focus": "Plan, create, edit and publish written texts with correct punctuation"
+      },
       "items": ["The dog can run.", "I like to play.", "We go to school.", "My name is Sam.", "The sun is hot today.", "She has a red bike.", "We play in the park.", "I can ride my bike."]
     }
   ]

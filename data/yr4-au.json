@@ -1,0 +1,86 @@
+{
+  "locale": "en-AU",
+  "yearGroup": 4,
+  "title": "Type Quest — Year 4",
+  "curriculumVersion": "9.0",
+  "curriculumSubject": "English",
+  "levels": [
+    {
+      "name": "Home Row",
+      "color": "LM",
+      "emoji": "🏠",
+      "sub": "Find the keys under your fingers",
+      "curriculum": {
+        "codes": ["AC9E4LY06"],
+        "focus": "Keyboard fluency to create written texts"
+      },
+      "items": ["f", "j", "d", "k", "a", "s", "l", "g", "h", "as", "add", "dad", "sad", "ask", "all", "lad", "fall", "glass", "flask", "salad", "flash"]
+    },
+    {
+      "name": "Multisyllabic Words",
+      "color": "LI",
+      "emoji": "🧩",
+      "sub": "Complex letter combinations and vowel sounds",
+      "curriculum": {
+        "codes": ["AC9E4LY09"],
+        "focus": "Use phonological and morphological knowledge to read and write multisyllabic words"
+      },
+      "items": ["placeholder", "words", "coming", "soon"]
+    },
+    {
+      "name": "Sentences",
+      "color": "RI",
+      "emoji": "✏️",
+      "sub": "Simple and compound sentences",
+      "curriculum": {
+        "codes": ["AC9E4LA06", "AC9E4LY06"],
+        "focus": "Understand and write simple and compound sentences"
+      },
+      "items": ["placeholder sentence one", "placeholder sentence two"]
+    },
+    {
+      "name": "Prefixes & Suffixes",
+      "color": "RM",
+      "emoji": "🔧",
+      "sub": "Word families and spelling generalisations",
+      "curriculum": {
+        "codes": ["AC9E4LY10"],
+        "focus": "Use letter patterns, prefixes, suffixes and word origins to spell complex words"
+      },
+      "items": ["prefix", "suffix", "wordfamily"]
+    },
+    {
+      "name": "Tricky Words",
+      "color": "LR",
+      "emoji": "🎯",
+      "sub": "High-frequency words and homophones",
+      "curriculum": {
+        "codes": ["AC9E4LY11"],
+        "focus": "Read and write high-frequency words including homophones"
+      },
+      "items": ["there", "their", "theyre"]
+    },
+    {
+      "name": "Capitals",
+      "color": "RR",
+      "emoji": "🔠",
+      "sub": "Proper nouns and sentence starts",
+      "curriculum": {
+        "codes": ["AC9E4LA08"],
+        "focus": "Understand how proper nouns use capital letters"
+      },
+      "items": ["Sydney", "Melbourne", "Australia", "Tuesday"]
+    },
+    {
+      "name": "Punctuated Sentences",
+      "color": "RP",
+      "emoji": "🏆",
+      "sub": "Edit and publish with correct punctuation",
+      "curriculum": {
+        "codes": ["AC9E4LY06"],
+        "focus": "Plan, create, edit and publish written texts with correct punctuation"
+      },
+      "items": ["Placeholder sentence.", "Another placeholder sentence."]
+    }
+  ]
+}
