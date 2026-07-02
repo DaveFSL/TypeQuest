@@ -3,84 +3,117 @@
   "yearGroup": 3,
   "title": "Type Quest — Year 3",
   "curriculumVersion": "9.0",
-  "curriculumSubject": "English",
+  "curriculumSubject": "English, Mathematics, Science, HASS, Technologies, HPE",
   "levels": [
     {
       "name": "Home Row",
       "color": "LM",
       "emoji": "🏠",
-      "sub": "Find the keys under your fingers",
+      "sub": "Keyboard fluency for writing across all subjects",
       "curriculum": {
         "codes": ["AC9E3LY06"],
-        "focus": "Keyboard fluency to create written texts"
+        "focus": "Create written texts in English and other learning areas"
       },
       "items": ["f", "j", "d", "k", "a", "s", "l", "g", "h", "as", "add", "dad", "sad", "ask", "all", "lad", "fall", "glass", "flask", "salad", "flash"]
     },
     {
-      "name": "Word Builder",
+      "name": "English Words",
       "color": "LI",
-      "emoji": "🧩",
-      "sub": "Phoneme–grapheme patterns in words",
-      "curriculum": {
-        "codes": ["AC9E3LY09"],
-        "focus": "Apply phoneme–grapheme relationships to read and write multisyllabic words"
-      },
-      "items": ["cat", "dog", "sun", "run", "big", "red", "fun", "jump", "play", "fish", "tree", "book", "milk", "frog", "green", "happy", "water", "smile", "friend", "because"]
-    },
-    {
-      "name": "Sentences",
-      "color": "RI",
-      "emoji": "✏️",
-      "sub": "Simple sentences with spaces",
-      "curriculum": {
-        "codes": ["AC9E3LA06", "AC9E3LY06"],
-        "focus": "Understand and write simple sentences"
-      },
-      "items": ["the cat is red", "i can run fast", "we like to play", "my dog is big", "the sun is hot", "she has a book", "look at the frog", "we play in the park", "i can jump up high", "my friend is funny"]
-    },
-    {
-      "name": "Big Words",
-      "color": "RM",
-      "emoji": "🚀",
-      "sub": "Multisyllabic words with complex patterns",
+      "emoji": "📖",
+      "sub": "Phoneme–grapheme patterns — AC9 English Literacy",
       "curriculum": {
         "codes": ["AC9E3LY09", "AC9E3LY10"],
-        "focus": "Blend and segment multisyllabic words with more complex letter patterns"
+        "focus": "Read and write multisyllabic words with phoneme–grapheme knowledge"
       },
-      "items": ["rainbow", "dinosaur", "elephant", "computer", "birthday", "favourite", "adventure", "playground", "butterfly", "important", "beautiful", "everybody", "wonderful", "vegetable"]
+      "items": ["jump", "play", "friend", "because", "happy", "water", "smile", "rainbow", "birthday", "favourite", "beautiful", "important", "different", "everybody", "wonderful", "vegetable", "adventure", "playground", "butterfly", "remember"]
+    },
+    {
+      "name": "Maths Words",
+      "color": "RM",
+      "emoji": "🔢",
+      "sub": "Number, shape and measurement vocabulary",
+      "curriculum": {
+        "codes": ["AC9M3N01", "AC9M3N02", "AC9M3M01", "AC9M3SP01"],
+        "focus": "Addition, subtraction, length, time and shape"
+      },
+      "items": ["add", "plus", "minus", "equal", "share", "group", "count", "number", "pattern", "double", "half", "quarter", "shape", "circle", "square", "triangle", "length", "metre", "clock", "graph"]
+    },
+    {
+      "name": "Science Words",
+      "color": "RI",
+      "emoji": "🔬",
+      "sub": "Living things and changes to materials",
+      "curriculum": {
+        "codes": ["AC9S3U01", "AC9S3B01", "AC9S3P01"],
+        "focus": "Heating and cooling, living things and forces"
+      },
+      "items": ["living", "nonliving", "plant", "animal", "grow", "change", "heat", "cool", "melt", "solid", "liquid", "observe", "push", "pull", "force", "light", "shadow", "water", "soil", "habitat"]
+    },
+    {
+      "name": "HASS Words",
+      "color": "LR",
+      "emoji": "🌏",
+      "sub": "Community, place and culture",
+      "curriculum": {
+        "codes": ["AC9H3K01", "AC9H3G01", "AC9H3C01"],
+        "focus": "Local community, places and rules"
+      },
+      "items": ["community", "family", "local", "place", "map", "rule", "fair", "respect", "culture", "Country", "celebrate", "special", "past", "present", "change", "weather", "season", "neighbour", "helper", "belong"]
+    },
+    {
+      "name": "Word Parts",
+      "color": "RR",
+      "emoji": "🔧",
+      "sub": "Suffixes and word building",
+      "curriculum": {
+        "codes": ["AC9E3LY10", "AC9E3LY11"],
+        "focus": "Letter patterns and suffixes in familiar words"
+      },
+      "items": ["playing", "jumped", "helpful", "quickly", "teacher", "running", "planted", "unhappy", "restart", "preview", "darkness", "movement", "kindness", "slowly", "careful", "hopeful", "walking", "looked", "talking", "opened"]
     },
     {
       "name": "Tricky Words",
-      "color": "LR",
+      "color": "RP",
       "emoji": "🎯",
-      "sub": "High-frequency and irregular words",
+      "sub": "High-frequency words teachers recommend",
       "curriculum": {
         "codes": ["AC9E3LY11", "AC9E3LY12"],
-        "focus": "Less common letter patterns and high-frequency words including homophones"
+        "focus": "Less common patterns and high-frequency words including homophones"
       },
       "items": ["already", "they", "forgetting", "beginning", "February", "yesterday", "believe", "people", "favourite", "chocolate", "almost", "after", "surprise", "tomorrow", "different", "ever", "never", "every", "one", "only", "once"]
     },
     {
-      "name": "Capitals",
-      "color": "RR",
+      "name": "Capitals & Places",
+      "color": "LP",
       "emoji": "🔠",
-      "sub": "Proper nouns and sentence starts",
+      "sub": "Proper nouns — Australia and beyond",
       "curriculum": {
-        "codes": ["AC9E3LA08"],
-        "focus": "Understand how proper nouns use capital letters"
+        "codes": ["AC9E3LA08", "AC9H3G01"],
+        "focus": "Capital letters for names, days, months and places"
       },
-      "items": ["Sam", "Max", "Emma", "Ben", "Tom", "Lily", "Jack", "Anna", "Monday", "Friday", "March", "April", "Brisbane", "Australia"]
+      "items": ["Sam", "Emma", "Jack", "Lily", "Monday", "Friday", "March", "April", "Brisbane", "Australia", "Sydney", "Melbourne", "Perth", "Tasmania", "Pacific", "Anangu", "Kaurna", "Wurundjeri", "Europe", "Asia"]
     },
     {
-      "name": "Real Sentences",
-      "color": "RP",
-      "emoji": "🏆",
-      "sub": "Capitals, full stops and editing",
+      "name": "Technologies & HPE",
+      "color": "LI",
+      "emoji": "💻",
+      "sub": "Design, digital safety and wellbeing",
       "curriculum": {
-        "codes": ["AC9E3LY06"],
-        "focus": "Plan, create, edit and publish written texts with correct punctuation"
+        "codes": ["AC9T3D01", "AC9T3I01", "AC9HP3P01", "AC9HP3M01"],
+        "focus": "Design, digital systems, health and movement"
       },
-      "items": ["The dog can run.", "I like to play.", "We go to school.", "My name is Sam.", "The sun is hot today.", "She has a red bike.", "We play in the park.", "I can ride my bike."]
+      "items": ["design", "make", "build", "plan", "safe", "online", "help", "body", "healthy", "food", "water", "exercise", "team", "friend", "play", "balance", "stretch", "strength", "kind", "care"]
+    },
+    {
+      "name": "Full Sentences",
+      "color": "RI",
+      "emoji": "🏆",
+      "sub": "Cross-curricular sentences with punctuation",
+      "curriculum": {
+        "codes": ["AC9E3LY06", "AC9E3LA06"],
+        "focus": "Write simple sentences about science, HASS and maths"
+      },
+      "items": ["The dog can run.", "I like to play.", "We go to school.", "Plants need water and light.", "A half is two equal parts.", "Our community has rules.", "Living things grow and change.", "Push and pull are forces.", "We respect First Nations cultures.", "My friend helps me learn."]
     }
   ]
 }

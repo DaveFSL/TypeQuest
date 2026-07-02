@@ -1,4 +1,4 @@
-const CACHE='typequest-v7';
+const CACHE='typequest-v8';
 const ASSETS=[
   './',
   './index.html',
