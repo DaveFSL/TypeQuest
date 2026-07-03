@@ -1,5 +1,5 @@
-const CACHE='typequest-v12';
-const DATA_VERSION='12';
+const CACHE='typequest-v13';
+const DATA_VERSION='13';
 const ASSETS=[
   './',
   './index.html',
