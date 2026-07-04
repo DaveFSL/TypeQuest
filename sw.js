@@ -1,4 +1,4 @@
-const CACHE='classkeys-v15';
+const CACHE='classkeys-v16';
 const DATA_VERSION='14';
 const ASSETS=[
   './',
