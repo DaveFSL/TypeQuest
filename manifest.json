@@ -1,6 +1,6 @@
 {
-  "name": "Type Quest",
-  "short_name": "Type Quest",
+  "name": "ClassKeys",
+  "short_name": "ClassKeys",
   "description": "Typing practice for Australian students — Years 3–6, aligned to Curriculum v9.",
   "start_url": "./",
   "display": "standalone",
